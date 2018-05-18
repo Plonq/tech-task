@@ -1,6 +1,7 @@
 // @flow
 import WeatherRepository from '../repository/WeatherRepository';
 import { FactoryInterface } from '../../../lib/FactoryInterface';
+import { LocationInterface } from '../model/LocationInterface';
 
 export default class WeatherController {
     _weatherRepository: WeatherRepository;
