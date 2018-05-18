@@ -13,7 +13,8 @@ export default {
     weatherController: {
         class: `${MODULE_WEATHER_PATH}/controller/WeatherController`,
         arguments: [
-            '@weatherRepository'
+            '@weatherRepository',
+            '@locationFactory'
         ]
     },
     /**
@@ -30,7 +31,8 @@ export default {
     weatherRepository: {
         class: `${MODULE_WEATHER_PATH}/repository/WeatherRepository`,
         arguments: [
-            '@weatherApi'
+            '@weatherApi',
+            '@weatherFactory'
         ]
     },
     weatherApi: {
