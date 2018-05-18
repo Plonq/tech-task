@@ -9,18 +9,18 @@ export default class WeatherRepository {
      _weatherFactory: FactoryInterface;
 
      constructor(weatherApi: WeatherApi, weatherFactory: FactoryInterface) {
-        this._weatherApi = weatherApi;
-        this._weatherFactory = weatherFactory;
+         this._weatherApi = weatherApi;
+         this._weatherFactory = weatherFactory;
      }
 
      async getWeatherByGeolocation(location: LocationInterface): Promise<WeatherInterface> {
-        const response = await this._weatherApi.getWeatherByGeolocation(
-            location.getLatitude(),
-            location.getLongitude()
-        );
+         const response = await this._weatherApi.getWeatherByGeolocation(
+             location.getLatitude(),
+             location.getLongitude()
+         );
 
-        const weather: WeatherInterface = this._weatherFactory.createInstance();
-        // please populate the response back from the api into the weather model
-        return weather;
+         const weather: WeatherInterface = this._weatherFactory.createInstance();
+         // please populate the response back from the api into the weather model
+         return weather;
      }
 }

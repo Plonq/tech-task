@@ -11,7 +11,7 @@ export default class Weather implements WeatherInterface {
 
     }
 
-     setTemperature(value: string): WeatherInterface {
+    setTemperature(value: string): WeatherInterface {
         return this;
-     }
+    }
 }

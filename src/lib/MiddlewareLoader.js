@@ -8,7 +8,7 @@ export default class MiddlewareLoader {
     _logger: LoggerInterface;
     _container: Container;
 
-    constructor(container: Container, server: Object, router: Object, logger : LoggerInterface) {
+    constructor(container: Container, server: Object, router: Object, logger: LoggerInterface) {
         this._server = server;
         this._router = router;
         this._container = container;
