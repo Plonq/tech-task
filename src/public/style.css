@@ -2,9 +2,12 @@
 
 }
 
+body {
+    font-family: "DejaVu Sans Condensed", serif;
+}
+
 .weather {
     width: 600px;
-    font-family: "DejaVu Sans Condensed", serif;
     color: #414141;
 }
 
