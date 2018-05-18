@@ -13,22 +13,18 @@ export default class WeatherController {
 
     async index(req: any, res: any): Promise<void> {
         try {
-            console.log('WeatherContoller....');
             // const location = this._locationFactory.createInstance();
             // please finish of the implementation by using the weatherRepository to get the current temperature
             // for your location
-            let temp = 'loading...';
             const location: LocationInterface = this._locationFactory.createInstance();
-            console.log('WeatherContoller.... after location creation');
-            this._weatherRepository.getWeatherByGeolocation(location).then((value) => {
-                console.log('Got response from repo');
-                console.log(value);
-                temp = value.getTemperature();
-
+            this._weatherRepository.getWeatherByGeolocation(location).then((weather) => {
                 res.render('weather/views/index.hbs', {
                     viewModel: {
-                        variable1: temp,
-                        variable2: location.getLongitude(),
+                        temperature: weather.getTemperature(),
+                        summary: weather.getSummary(),
+                        precipitation: weather.getPrecipitation(),
+                        humidity: weather.getHumidity(),
+                        windSpeed: weather.getWindSpeed(),
                     }
                 });
             });

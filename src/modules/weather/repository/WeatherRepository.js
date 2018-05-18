@@ -14,23 +14,18 @@ export default class WeatherRepository {
      }
 
      async getWeatherByGeolocation(location: LocationInterface): Promise<WeatherInterface> {
-         console.log('WeatherRepository....');
          const response = await this._weatherApi.getWeatherByGeolocation(
              location.getLatitude(),
              location.getLongitude()
          );
-         console.log('After API fetch....');
 
          const weather: WeatherInterface = this._weatherFactory.createInstance();
-         console.log('After weather object creation....');
          // please populate the response back from the api into the weather model
-         console.log(response.data.currently.temperature);
-         return weather.setTemperature(response.data.currently.temperature);
-         // weather.getTemperature();
-         // const promise = new Promise(((resolve) => {
-         //     resolve(weather);
-         // }));
-         // console.log('after promise created');
-         // return promise;
+         return weather.
+         setTemperature(response.data.currently.temperature).
+         setSummary(response.data.currently.summary).
+         setPrecipitation(response.data.currently.precipProbability).
+         setHumidity(response.data.currently.humidity).
+         setWindSpeed(response.data.currently.windSpeed);
      }
 }
