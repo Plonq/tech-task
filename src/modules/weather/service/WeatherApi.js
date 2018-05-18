@@ -14,6 +14,6 @@ export default class WeatherApi {
         const darkSkyBaseUrl = 'https://api.darksky.net/forecast/';
         const darkSkyApiKey = process.env.DARK_SKY;
 
-        return axios.get(`${darkSkyBaseUrl}${darkSkyApiKey}/${lat},${long}`);
+        return axios.get(`${darkSkyBaseUrl}${darkSkyApiKey}/${lat},${long}?units=auto`);
     }
 }
