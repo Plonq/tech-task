@@ -1,3 +1,54 @@
 .error-panel {
 
 }
+
+.weather {
+    width: 600px;
+    font-family: "DejaVu Sans Condensed", serif;
+    color: #414141;
+}
+
+.left-side {
+    display: inline-block;
+    padding: 10px;
+    width: 300px;
+}
+
+.right-side {
+    display: inline-block;
+    padding: 10px;
+    width: 200px;
+}
+
+.location {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.temp-icon-container > div {
+    display: inline-block;
+}
+
+.temp-icon-container {
+    margin-top: 20px;
+}
+
+.temp-container {
+    display: inline-block;
+}
+
+.temp-container > div {
+    display: inline-block;
+    color: black;
+}
+
+.temp {
+    font-size: 3em;
+    float: left;
+}
+
+.temp-unit {
+    float: left;
+}
+
+

@@ -7,4 +7,24 @@
     <p>Precipitation: {{viewModel.precipitation}}%</p>
     <p>Humidity: {{viewModel.humidity}}%</p>
     <p>Wind Speed: {{viewModel.windSpeed}} km/h</p>
+
+    <div class="weather">
+        <div class="left-side">
+            <div class="location">Melbourne, VIC 3004</div>
+            <div class="time">Wednesday 12:00 pm</div>
+            <div class="summary">{{viewModel.summary}}</div>
+            <div class="temp-icon-container">
+                <div class="icon"><img src="/public/icons/{{viewModel.icon}}.png" width="50px"/></div>
+                <div class="temp-container">
+                    <div class="temp">{{viewModel.temperature}}</div>
+                    <div class="temp-unit"> °C</div>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="precipitation">Precipitation: {{viewModel.precipitation}}%</div>
+            <div class="humidity">Humidity: {{viewModel.humidity}}%</div>
+            <div class="wind-speed">Wind Speed: {{viewModel.windSpeed}} km/h</div>
+        </div>
+    </div>
 </div>

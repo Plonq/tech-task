@@ -21,11 +21,13 @@ export default class WeatherRepository {
 
          const weather: WeatherInterface = this._weatherFactory.createInstance();
          // please populate the response back from the api into the weather model
+         const data = response.data.currently;
          return weather.
-         setTemperature(response.data.currently.temperature).
-         setSummary(response.data.currently.summary).
-         setPrecipitation(response.data.currently.precipProbability).
-         setHumidity(response.data.currently.humidity).
-         setWindSpeed(response.data.currently.windSpeed);
+         setTemperature(data.temperature).
+         setSummary(data.summary).
+         setIcon(data.icon).
+         setPrecipitation(data.precipProbability).
+         setHumidity(data.humidity).
+         setWindSpeed(data.windSpeed);
      }
 }

@@ -7,6 +7,7 @@ import { WeatherInterface } from './WeatherInterface';
 export default class Weather implements WeatherInterface {
     _temperature: string;
     _summary: string;
+    _icon: string;
     _precipitation: string;
     _humidity: string;
     _windSpeed: string;
@@ -17,6 +18,10 @@ export default class Weather implements WeatherInterface {
 
     getSummary(): ?string {
         return this._summary;
+    }
+
+    getIcon(): ?string {
+        return this._icon;
     }
 
     getPrecipitation(): ?string {
@@ -38,6 +43,11 @@ export default class Weather implements WeatherInterface {
 
     setSummary(value: string): WeatherInterface {
         this._summary = value;
+        return this;
+    }
+
+    setIcon(value: string): WeatherInterface {
+        this._icon = value;
         return this;
     }
 

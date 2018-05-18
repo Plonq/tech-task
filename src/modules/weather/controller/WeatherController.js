@@ -20,11 +20,12 @@ export default class WeatherController {
             this._weatherRepository.getWeatherByGeolocation(location).then((weather) => {
                 res.render('weather/views/index.hbs', {
                     viewModel: {
-                        temperature: weather.getTemperature(),
+                        temperature: parseInt(weather.getTemperature(), 10),
                         summary: weather.getSummary(),
-                        precipitation: weather.getPrecipitation(),
-                        humidity: weather.getHumidity(),
-                        windSpeed: weather.getWindSpeed(),
+                        icon: weather.getIcon(),
+                        precipitation: parseFloat(weather.getPrecipitation(), 10) * 100,
+                        humidity: parseFloat(weather.getHumidity(), 10) * 100,
+                        windSpeed: parseInt(weather.getWindSpeed(), 10),
                     }
                 });
             });
